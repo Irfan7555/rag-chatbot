@@ -1,0 +1,39 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment files
+.env
+*.env
+
+# Virtual environment
+venv/
+.env/
+.venv/
+
+# Git
+.git
+.gitignore
+
+# Docker-related
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# IDE/editor config
+.vscode/
+.idea/
+*.swp
+
+FAISS_Index
+logs
+db

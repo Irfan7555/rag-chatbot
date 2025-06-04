@@ -1,0 +1,67 @@
+# Python virtual environment
+.venv/
+venv/
+ENV/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Database files
+db/*.db
+*.sqlite
+*.sqlite3
+db
+FAISS_Index
+
+
+# Vector stores
+FAISS_Index/*
+!FAISS_Index/.gitkeep
+
+# Logs
+logs/*
+*.log
+!logs/.gitkeep
+
+# Environment variables
+.env
+
+# Local configuration
+.streamlit/config.toml
+.streamlit/secrets.toml
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+temp/
+tmp/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# User-uploaded files
+uploads/
+
+# Large files
+*.pdf
+*.docx
+*.pptx
+*.xlsx
+
+# Keep certain directories with .gitkeep
+!db/.gitkeep
