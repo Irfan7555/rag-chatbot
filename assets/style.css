@@ -1,0 +1,265 @@
+/* ========================================================================
+   Enterprise RAG Chatbot ‑ rac‑branded stylesheet
+   ======================================================================== */
+
+/* ----  rac brand fonts  ---- */
+@font-face {
+    font-family: "racForward";
+    src: url("../fonts/racForward-Regular.ttf") format("truetype");
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: "racForward";
+    src: url("../fonts/racForward-Medium.ttf") format("truetype");
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: "racForward";
+    src: url("../fonts/racForward-Bold.ttf") format("truetype");
+    font-weight: 700;
+  }
+  
+  /* ----  Brand tokens  ---- */
+  :root {
+    --rac-purple-dark: #43206f;   /* nav / sidebar */
+    --rac-purple:       #5b2d91;  /* primary purple */
+    --rac-pink:         #ff0066;  /* primary CTA    */
+    --rac-pink-dark:    #e0005b;  /* CTA hover      */
+    --rac-lavender:     #f3f0f9;  /* light surf.    */
+    --rac-light-gray:   #f7f7f8;  /* chat bubbles   */
+    --rac-gray:         #4b5563;  /* neutrals       */
+    --rac-green:        #00c389;  /* success badge  */
+  }
+  
+  /* --------------------------------------------------------------------- */
+  /* Reset & base                                                           */
+  /* --------------------------------------------------------------------- */
+  * {
+    font-family: "racForward", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  
+  #MainMenu,
+  footer,
+  header {
+    display: none !important;
+  }
+  
+  /* --------------------------------------------------------------------- */
+  /* Layout                                                                 */
+  /* --------------------------------------------------------------------- */
+  section[data-testid="stSidebar"],
+  section[data-testid="stSidebar"] > div {
+    background-color: var(--rac-purple-dark) !important;
+    color: #fff !important;
+  }
+  
+  section[data-testid="stSidebar"] p,
+  section[data-testid="stSidebar"] span,
+  section[data-testid="stSidebar"] div,
+  section[data-testid="stSidebar"] label,
+  section[data-testid="stSidebar"] button {
+    color: #ececf1 !important;
+  }
+  
+  section[data-testid="stSidebar"] h1,
+  section[data-testid="stSidebar"] h2,
+  section[data-testid="stSidebar"] h3,
+  section[data-testid="stSidebar"] h4 {
+    color: var(--rac-lavender) !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+  }
+  
+  .main .block-container {
+    padding-top: 30px !important;
+    max-width: 1200px !important;
+  }
+  
+  /* --------------------------------------------------------------------- */
+  /* Chat                                                                   */
+  /* --------------------------------------------------------------------- */
+  [data-testid="rachatMessage"] {
+    background-color: transparent !important;
+    padding: 12px !important;
+    border-radius: 8px !important;
+    margin-bottom: 15px !important;
+  }
+  
+  [data-testid="rachatMessage"] [data-testid="rachatMessageContent"] {
+    background-color: var(--rac-light-gray) !important;
+    padding: 12px 16px !important;
+    border-radius: 12px !important;
+    color: #000 !important;
+    max-width: 85% !important;
+  }
+  
+  [data-testid="rachatMessage"][data-testid="rachatMessageUser"]
+    [data-testid="rachatMessageContent"] {
+    background-color: var(--rac-purple) !important;
+    color: #fff !important;
+    border-bottom-right-radius: 4px !important;
+  }
+  
+  [data-testid="rachatMessage"][data-testid="rachatMessageAssistant"]
+    [data-testid="rachatMessageContent"] {
+    background-color: var(--rac-light-gray) !important;
+    color: #000 !important;
+    border-bottom-left-radius: 4px !important;
+  }
+  
+  /* --------------------------------------------------------------------- */
+  /* Buttons & inputs                                                       */
+  /* --------------------------------------------------------------------- */
+  .stButton > button {
+    background-color: var(--rac-lavender) !important;
+    color: var(--rac-purple-dark) !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 6px !important;
+    padding: 8px 12px !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+  }
+  
+  .stButton > button:hover {
+    background-color: #e5e7eb !important;
+    border-color: #9ca3af !important;
+    transform: translateY(-1px) !important;
+  }
+  
+  .stButton > button[data-testid="baseButton-primary"] {
+    background-color: var(--rac-pink) !important;
+    color: #fff !important;
+    border: none !important;
+    box-shadow: 0 2px 4px rgba(255, 0, 102, 0.3) !important;
+  }
+  
+  .stButton > button[data-testid="baseButton-primary"]:hover {
+    background-color: var(--rac-pink-dark) !important;
+    box-shadow: 0 4px 6px rgba(224, 0, 91, 0.4) !important;
+  }
+  
+  .stButton > button[data-testid="baseButton-secondary"] {
+    background-color: var(--rac-gray) !important;
+    color: #fff !important;
+    border: none !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+  }
+  .stButton > button[data-testid="baseButton-secondary"]:hover {
+    background-color: var(--rac-purple) !important;
+    transform: translateY(-1px) !important;
+  }
+  
+  /* --------------------------------------------------------------------- */
+  /* Sidebar navigation buttons – rac Gray background                      */
+  /* --------------------------------------------------------------------- */
+  section[data-testid="stSidebar"] .stButton > button {
+    background-color: var(--rac-gray) !important;
+    color: #fff !important;
+    border: none !important;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1) !important;
+  }
+  section[data-testid="stSidebar"] .stButton > button:hover {
+    background-color: var(--rac-purple) !important;
+    transform: translateY(-1px) !important;
+  }
+  
+  /* --------------------------------------------------------------------- */
+  /* Text input                                                             */
+  /* --------------------------------------------------------------------- */
+  .stTextInput > div > div > input {
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-size: 16px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  }
+  
+  .stTextInput > div > div > input:focus {
+    border-color: var(--rac-purple);
+    box-shadow: 0 0 0 3px rgba(91,45,145,0.2);
+  }
+  
+  /* --------------------------------------------------------------------- */
+  /* Progress bar                                                           */
+  /* --------------------------------------------------------------------- */
+  .stProgress > div > div > div {
+    background-color: var(--rac-pink) !important;
+  }
+  
+  /* --------------------------------------------------------------------- */
+  /* Upload area                                                            */
+  /* --------------------------------------------------------------------- */
+  .upload-area {
+    border: 2px dashed var(--rac-purple);
+    border-radius: 8px;
+    padding: 25px;
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: var(--rac-lavender);
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  .upload-area:hover {
+    border-color: var(--rac-purple);
+    background-color: #ebe6f3;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+    transform: translateY(-1px);
+  }
+  
+  /* --------------------------------------------------------------------- */
+  /* Select & tags                                                           */
+  /* --------------------------------------------------------------------- */
+  div[data-baseweb="select"] {
+    background-color: #fff !important;
+    border-radius: 6px !important;
+    border: 1px solid #d1d5db !important;
+    color: var(--rac-purple-dark) !important;
+  }
+  div[data-baseweb="select"]:hover {
+    border-color: var(--rac-purple) !important;
+  }
+  div[data-baseweb="select"] > div {
+    background-color: transparent !important;
+    color: var(--rac-purple-dark) !important;
+  }
+  div[data-baseweb="tag"] {
+    background-color: var(--rac-purple) !important;
+    border-radius: 4px !important;
+    color: #fff !important;
+  }
+  div[data-baseweb="tag"] svg {
+    color: #fff !important;
+  }
+  
+  /* --------------------------------------------------------------------- */
+  /* Mobile tweaks                                                          */
+  /* --------------------------------------------------------------------- */
+  @media (max-width: 768px) {
+    .main .block-container {
+      padding: 30px 15px !important;
+    }
+    [data-testid="rachatMessage"] [data-testid="rachatMessageContent"] {
+      max-width: 95% !important;
+    }
+  }
+  
+  /* --------------------------------------------------------------------- */
+  /* Thinking dots                                                          */
+  /* --------------------------------------------------------------------- */
+  @keyframes pulse {
+    0%   { opacity: .4; transform: scale(1); }
+    50%  { opacity: 1;   transform: scale(1.3); }
+    100% { opacity: .4; transform: scale(1); }
+  }
+  .thinking-dot {
+    background-color: var(--rac-purple);
+    width: 8px; height: 8px; border-radius: 50%;
+    margin-right: 4px; animation: pulse 1.5s infinite;
+  }
+  .thinking-dot:nth-child(2) { animation-delay: .3s; }
+  .thinking-dot:nth-child(3) { animation-delay: .6s; margin-right: 10px; }
+  .stButton > button[data-testid="baseButton-secondary"].st-emotion-cache-qsto9u.em9zgd02.ai-style-change-1 {
+    background-color: rgb(198, 199, 201) !important;
+}

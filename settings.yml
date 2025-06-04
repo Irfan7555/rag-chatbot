@@ -1,0 +1,21 @@
+# API Keys
+openai_key: "your api key"  # Replace with your actual OpenAI API key
+
+# Models
+chat_model: "gpt-4o-mini"
+embeddings_model: "text-embedding-3-small"
+
+# Database
+database:
+  type: "sqlite"
+  path: "db/chat_history.db"
+
+# Chunking Settings
+default_chunk_size: 1000
+default_chunk_overlap: 200
+
+# Retrieval Settings
+retrieval:
+  top_k: 4
+  search_type: "mmr"
+  fetch_k: 8  # Number of documents to fetch before reranking
