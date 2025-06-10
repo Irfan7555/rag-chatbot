@@ -5,7 +5,7 @@ import time
 import uuid
 import base64
 import logging
-from datetime import datetime
+from datetime import datetime, timedelta
 from io import BytesIO
 
 # Import utility modules
@@ -15,12 +15,9 @@ from utils.database import (
     create_conversation,
     get_messages,
     add_message,
-    add_sources,
     get_sources,
     update_conversation_title,
     delete_conversation,
-    get_setting,
-    set_setting,
     get_active_knowledge_base,
     set_active_knowledge_base
 )
@@ -59,6 +56,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+# from styling import add_custom_css
 
 # Custom CSS
 def add_custom_css():
@@ -120,8 +118,8 @@ def add_custom_css():
     section[data-testid="stSidebar"] .stMultiselect span,
     section[data-testid="stSidebar"] [data-baseweb="select"] span,
     section[data-testid="stSidebar"] [data-baseweb="tag"] span,
-    section[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p { 
-      color: white !important; 
+    section[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p {
+      color: white !important;
     }
 
     /* Make checkboxes more visible in sidebar */
@@ -538,14 +536,7 @@ def sidebar():
         st.rerun()
 
     # Chat History - Better styling
-    st.sidebar.markdown("""
-    <div class="sidebar-section-title" style="margin-top:20px;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-        </svg>
-        <span>Chat History</span>
-    </div>
-    """, unsafe_allow_html=True)
+    st.sidebar.write("📥Chat History")
 
     for conv_id, title, created_at in st.session_state.conversations:
         col1, col2 = st.sidebar.columns([5, 1])
@@ -863,7 +854,7 @@ def chat_interface():
 
                 # Better styling for timestamp
                 try:
-                    formatted_time = datetime.fromisoformat(timestamp.replace('Z', '+00:00')).strftime("%I:%M %p")
+                    formatted_time = (datetime.fromisoformat(timestamp.replace('Z', '+00:00')) + timedelta(hours=5, minutes=30)).strftime("%I:%M %p")
                 except:
                     formatted_time = timestamp
 

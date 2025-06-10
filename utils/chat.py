@@ -16,7 +16,7 @@ from utils.document_processing import initialize_embedding_model, get_retriever
 from utils.database import add_message, add_sources, get_messages, update_conversation_title
 
 
-BASE_DIR = "/app/data"
+BASE_DIR = "data"
 DB_DIR = os.path.join(BASE_DIR, "db")
 FAISS_DIR = os.path.join(BASE_DIR, "FAISS_Index")
 DB_PATH = os.path.join(DB_DIR, "chat_history.db")

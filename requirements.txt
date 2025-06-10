@@ -17,3 +17,4 @@ python-docx>=0.8.11
 # Utilities
 pyyaml>=6.0
 tqdm>=4.65.0
+psycopg2-binary>=2.9.10
